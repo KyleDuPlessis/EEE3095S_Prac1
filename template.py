@@ -39,7 +39,49 @@ GPIO.setup(LED3, GPIO.OUT)
 GPIO.setup(btnIncrease, GPIO.IN, pull_up_down=GPIO.PUD_UP) # button to increase binary value
 GPIO.setup(btnDecrease, GPIO.IN, pull_up_down=GPIO.PUD_UP) # button to decrease binary value
 
+# initialise global variables
+# list of 3-bit binary values
+binaryValues = ["000", "001", "010", "011", "100", "101", "110", "111"]
+counter = 0
 
+# this function increases the binary value
+def increaseBinaryValue():
+
+    print("***Increment button pressed***")
+    global counter  # use global keyword to modify counter from inside the function
+
+    if counter == 7:  # wrap around value - increasing "111" should display "000"
+        counter = 0
+    else:
+        counter += 1  # increment counter by 1
+
+    # display specific binary value on 3 LEDs
+    GPIO.output(LED1, int(binaryValues[counter][0]))
+    GPIO.output(LED2, int(binaryValues[counter][1]))
+    GPIO.output(LED3, int(binaryValues[counter][2]))
+
+    # print out specific binary value to screen
+    print("3-bit binary value: " + binaryValues[counter])
+
+
+# this function decreases the binary value
+def decreaseBinaryValue():
+
+    print("***Decrement button pressed***")
+    global counter  # use global keyword to modify counter from inside the function
+
+    if counter == 0:  # wrap around value - decreasing "000" should display "111"
+        counter = 7
+    else:
+        counter -= 1  # decrement counter by 1
+
+    # display specific binary value on 3 LEDs
+    GPIO.output(LED1, int(binaryValues[counter][0]))
+    GPIO.output(LED2, int(binaryValues[counter][1]))
+    GPIO.output(LED3, int(binaryValues[counter][2]))
+
+    # print out specific binary value to screen
+    print("3-bit binary value: " + binaryValues[counter])
 
 # program logic
 def main():
@@ -54,7 +96,7 @@ if __name__ == "__main__":
             main()
     except KeyboardInterrupt:
         print("Exiting gracefully")
-        # turn off your GPIOs here
+        # turn off GPIOs here
         GPIO.cleanup()
     except e:
         GPIO.cleanup()
