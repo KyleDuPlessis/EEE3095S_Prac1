@@ -29,6 +29,16 @@ btnIncrease = 19  # corresponds to board number 35
 # set btnDecrease to GPIO number 26
 btnDecrease = 26  # corresponds to board number 37
 
+# configure LEDs as output
+GPIO.setup(LED1, GPIO.OUT)
+GPIO.setup(LED2, GPIO.OUT)
+GPIO.setup(LED3, GPIO.OUT)
+
+# configure push buttons as input
+# both buttons are currently in up position
+GPIO.setup(btnIncrease, GPIO.IN, pull_up_down=GPIO.PUD_UP) # button to increase binary value
+GPIO.setup(btnDecrease, GPIO.IN, pull_up_down=GPIO.PUD_UP) # button to decrease binary value
+
 
 
 # program logic
