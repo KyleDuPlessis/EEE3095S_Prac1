@@ -6,23 +6,45 @@ Prac: 1
 Date: 22/07/2019
 """
 
-# import Relevant Librares
+# import relevant libraries
 import RPi.GPIO as GPIO
 
-# Logic that you write
+# set mode to BCM pin numbering system
+GPIO.setmode(GPIO.BCM)
+
+# select pins to be used from GPIO pinout diagram
+
+# set LED1 to GPIO number 16
+LED1 = 16  # corresponds to board number 36
+
+# set LED2 to GPIO number 20
+LED2 = 20  # corresponds to board number 38
+
+# set LED3 to GPIO number 21
+LED3 = 21  # corresponds to board number 40
+
+# set btnIncrease to GPIO number 19
+btnIncrease = 19  # corresponds to board number 35
+
+# set btnDecrease to GPIO number 26
+btnDecrease = 26  # corresponds to board number 37
+
+
+
+# program logic
 def main():
     print("write your logic here")
 
 
-# Only run the functions if 
+# only run the functions if
 if __name__ == "__main__":
-    # Make sure the GPIO is stopped correctly
+    # make sure the GPIO is stopped correctly
     try:
         while True:
             main()
     except KeyboardInterrupt:
         print("Exiting gracefully")
-        # Turn off your GPIOs here
+        # turn off your GPIOs here
         GPIO.cleanup()
     except e:
         GPIO.cleanup()
