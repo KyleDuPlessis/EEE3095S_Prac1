@@ -44,7 +44,7 @@ GPIO.setup(btnDecrease, GPIO.IN, pull_up_down=GPIO.PUD_UP) # button to decrease 
 binaryValues = ["000", "001", "010", "011", "100", "101", "110", "111"]
 counter = 0
 
-# this function increases the binary value
+# this function increases the binary value on button press
 def increaseBinaryValue():
 
     print("***Increment button pressed***")
@@ -64,7 +64,7 @@ def increaseBinaryValue():
     print("3-bit binary value: " + binaryValues[counter])
 
 
-# this function decreases the binary value
+# this function decreases the binary value on button press
 def decreaseBinaryValue():
 
     print("***Decrement button pressed***")
@@ -82,6 +82,11 @@ def decreaseBinaryValue():
 
     # print out specific binary value to screen
     print("3-bit binary value: " + binaryValues[counter])
+
+# inputs - interrupts and edge detection
+# falling edge detection on btnIncrease and btnDecrease, ignoring further edges for 200ms for switch bounce handling
+GPIO.add_event_detect(btnIncrease, GPIO.FALLING, callback=increaseBinaryValue, bouncetime=200) # set callback function to increaseBinaryValue function
+GPIO.add_event_detect(btnDecrease, GPIO.FALLING, callback=decreaseBinaryValue, bouncetime=200) # set callback function to decreaseBinaryValue function
 
 # program logic
 def main():
