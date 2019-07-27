@@ -16,7 +16,6 @@ Hardware Required:
 - 3 x Resistors
 - Dupont Wires
 
-Outcomes of this Practical:
 You will learn about the following topics:
 - Basic GPIO Usage
 - Interrupts
