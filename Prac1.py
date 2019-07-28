@@ -90,7 +90,7 @@ GPIO.add_event_detect(btnDecrease, GPIO.FALLING, callback=decreaseBinaryValue, b
 
 # program logic
 def main():
-    print("write your logic here")
+    #print("write your logic here")
 
 
 # only run the functions if
