@@ -30,6 +30,6 @@ You will learn about the following topics:
 Run program:
 ----
 ```sh
-$ chmod +x template.py
-$ ./template.py
+$ chmod +x Prac1.py
+$ ./Prac1.py
 ```
