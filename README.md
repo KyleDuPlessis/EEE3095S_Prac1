@@ -15,7 +15,7 @@ Hardware Required:
 - A breadboard
 - 2 x push buttons
 - 3 x LEDs
-- 3 x Resistors
+- 3 x 10kΩ Resistors
 - Dupont Wires
 
 You will learn about the following topics:
