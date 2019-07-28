@@ -90,6 +90,7 @@ GPIO.add_event_detect(btnDecrease, GPIO.FALLING, callback=decreaseBinaryValue, b
 
 # program logic
 def main():
+    x = 1
     #print("write your logic here")
 
 
