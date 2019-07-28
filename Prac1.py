@@ -45,7 +45,7 @@ binaryValues = ["000", "001", "010", "011", "100", "101", "110", "111"]
 counter = 0
 
 # this function increases the binary value on button press
-def increaseBinaryValue():
+def increaseBinaryValue(arg):
 
     print("***Increment button pressed***")
     global counter  # use global keyword to modify counter from inside the function
@@ -65,7 +65,7 @@ def increaseBinaryValue():
 
 
 # this function decreases the binary value on button press
-def decreaseBinaryValue():
+def decreaseBinaryValue(arg):
 
     print("***Decrement button pressed***")
     global counter  # use global keyword to modify counter from inside the function
