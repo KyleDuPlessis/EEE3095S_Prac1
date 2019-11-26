@@ -1,5 +1,5 @@
 # EEE3095S_Prac1
-Practical 1 - Git, Bash, GPIO
+Git, Bash and GPIO
 ----
 Task:
 ----
